@@ -20,11 +20,16 @@
             height: 100vh;
         }
     </style>
+    
 </head>
 
 <body>
-    <center><h2>Your Current Location</h2>
-        <h4>wait for 3 sec.</h4>
+    <center><div id="text-in">
+        <h2>Your Current Location</h2>
+    </div>
+        <div id="msg">
+        <p>wait for 5 seconds to get your current location</p>
+        </div>
     </center>
     <button id="map">Get Location</button>
    
@@ -33,7 +38,22 @@
 
 <!-- leaflet js  -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script type="text/javascript">
+    setInterval(() => {
+        const sometext=document.getElementById('text-in');
+        sometext.style.display='text-in';
+    },5000);
+</script>
+
+<script type="text/javascript">
+    setTimeout(() => {
+        const sometext=document.getElementById('msg');
+        sometext.style.display='none';
+    },5000);
+</script>
 <script>
+    
     // Map initialization 
     var map = L.map('map').setView([14.0860746, 100.608406], 6);
     const button = document.getElementById('map');
