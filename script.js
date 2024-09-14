@@ -11,10 +11,10 @@
     osm.addTo(map);
 
     if(!navigator.geolocation) {
-        console.log("Your browser doesn't support geolocation feature!")
+        console.log("Your browser doesn't support geolocation feature!") 
     } else {
         setInterval(() => {
-            navigator.geolocation.getCurrentPosition(getPosition)
+            navigator.geolocation.getCurrentPosition(getPosition) 
         }, 5000);
     }
 
@@ -34,7 +34,7 @@
             map.removeLayer(circle)
         }
 
-        marker = L.marker([lat, long])
+        marker = L.marker([lat, long])    
         circle = L.circle([lat, long], {radius: accuracy})
 
         var featureGroup = L.featureGroup([marker, circle]).addTo(map)
